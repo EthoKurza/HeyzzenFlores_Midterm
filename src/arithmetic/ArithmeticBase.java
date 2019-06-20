@@ -43,16 +43,16 @@ public class ArithmeticBase
         
         int randNum = (int)(Math.random()*(3-0)+1); //generate random number
         
-        if(op[randNum].getOP().toString().equals("PLUS")){
+        if(op[randNum].getOP().equals(Operators.Operator.PLUS)){
             return x + y;
         }
-        else if(op[randNum].getOP().toString().equals("MINUS")){
+        else if(op[randNum].getOP().equals(Operators.Operator.MINUS)){
             return x - y;
         }
-        else if(op[randNum].getOP().toString().equals("TIMES")){
+        else if(op[randNum].getOP().equals(Operators.Operator.TIMES)){
             return x * y;
         }
-        else if(op[randNum].getOP().toString().equals("DIVIDE")){
+        else if(op[randNum].getOP().equals(Operators.Operator.DIVIDE)){
             return x / y;
         }
         else{
