@@ -16,13 +16,11 @@ import java.util.Scanner;
 public class ArithmeticBase 
 {
  public double x,y;
-    double calculate(double x, double y) 
-        {
-        Scanner sc =new Scanner(System.in);
+    double calculate(double x, double y) {
+        /*Scanner sc =new Scanner(System.in);
         System.out.println("enter String");
         String s= sc.next();
-        switch (s.toUpperCase()) 
-        {
+        switch (s.toUpperCase()) {
             case "PLUS":
                 return x + y;
             case "MINUS":
@@ -34,6 +32,38 @@ public class ArithmeticBase
             default:
                 throw new AssertionError("Unknown operations " + this);
         }
-    }
+        */
+        
+        Operators op[] = new Operators[4];
+        int count=0;
+        for(Operators.Operator o: Operators.Operator.values() ){
+            op[count] = new Operators(o);
+            count++;
+        }
+        
+        int randNum = (int)(Math.random()*(3-0)+1); //generate random number
+        
+        if(op[randNum].getOP().toString().equals("PLUS")){
+            return x + y;
+        }
+        else if(op[randNum].getOP().toString().equals("MINUS")){
+            return x - y;
+        }
+        else if(op[randNum].getOP().toString().equals("TIMES")){
+            return x * y;
+        }
+        else if(op[randNum].getOP().toString().equals("DIVIDE")){
+            return x / y;
+        }
+        else{
+            return 0;
+        }
+
+        
+        
+        
+        
+        
+    }//end of function
    
 }
